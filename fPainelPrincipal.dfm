@@ -1,0 +1,75 @@
+object frmPainelPrincipal: TfrmPainelPrincipal
+  Left = 0
+  Top = 0
+  Caption = 'Painel...'
+  ClientHeight = 401
+  ClientWidth = 762
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object pnlSenhaAtual: TPanel
+    Left = 0
+    Top = 317
+    Width = 762
+    Height = 84
+    Align = alBottom
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -27
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    ExplicitTop = 216
+    ExplicitWidth = 601
+  end
+  object pnlHistorico: TPanel
+    Left = 0
+    Top = 45
+    Width = 625
+    Height = 272
+    Align = alLeft
+    TabOrder = 1
+    object memHistorico: TMemo
+      Left = 1
+      Top = 1
+      Width = 623
+      Height = 270
+      Align = alClient
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -19
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      ExplicitWidth = 440
+    end
+  end
+  object pnlIdentificacaoTerminal: TPanel
+    Left = 0
+    Top = 0
+    Width = 762
+    Height = 45
+    Align = alTop
+    TabOrder = 2
+    ExplicitWidth = 601
+    object edtServerRabbitMq: TEdit
+      Left = 24
+      Top = 5
+      Width = 89
+      Height = 21
+      TabOrder = 0
+      Text = '192.168.15.14'
+    end
+  end
+end

@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{C1A40D24-6151-4C75-96B8-02A4764EE932}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="SenhasTerminal.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GeradorSenhas.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="SolicitacaoSenhaCaixa.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="PainelSenhas.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ExemploUsoGeral.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="SenhasTerminal">
+        <MSBuild Projects="SenhasTerminal.dproj"/>
+    </Target>
+    <Target Name="SenhasTerminal:Clean">
+        <MSBuild Projects="SenhasTerminal.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SenhasTerminal:Make">
+        <MSBuild Projects="SenhasTerminal.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GeradorSenhas">
+        <MSBuild Projects="GeradorSenhas.dproj"/>
+    </Target>
+    <Target Name="GeradorSenhas:Clean">
+        <MSBuild Projects="GeradorSenhas.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GeradorSenhas:Make">
+        <MSBuild Projects="GeradorSenhas.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SolicitacaoSenhaCaixa">
+        <MSBuild Projects="SolicitacaoSenhaCaixa.dproj"/>
+    </Target>
+    <Target Name="SolicitacaoSenhaCaixa:Clean">
+        <MSBuild Projects="SolicitacaoSenhaCaixa.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SolicitacaoSenhaCaixa:Make">
+        <MSBuild Projects="SolicitacaoSenhaCaixa.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="PainelSenhas">
+        <MSBuild Projects="PainelSenhas.dproj"/>
+    </Target>
+    <Target Name="PainelSenhas:Clean">
+        <MSBuild Projects="PainelSenhas.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PainelSenhas:Make">
+        <MSBuild Projects="PainelSenhas.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExemploUsoGeral">
+        <MSBuild Projects="ExemploUsoGeral.dproj"/>
+    </Target>
+    <Target Name="ExemploUsoGeral:Clean">
+        <MSBuild Projects="ExemploUsoGeral.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExemploUsoGeral:Make">
+        <MSBuild Projects="ExemploUsoGeral.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="SenhasTerminal;GeradorSenhas;SolicitacaoSenhaCaixa;PainelSenhas;ExemploUsoGeral"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="SenhasTerminal:Clean;GeradorSenhas:Clean;SolicitacaoSenhaCaixa:Clean;PainelSenhas:Clean;ExemploUsoGeral:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="SenhasTerminal:Make;GeradorSenhas:Make;SolicitacaoSenhaCaixa:Make;PainelSenhas:Make;ExemploUsoGeral:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
