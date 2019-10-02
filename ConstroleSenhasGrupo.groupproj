@@ -15,9 +15,6 @@
         <Projects Include="PainelSenhas.dproj">
             <Dependencies/>
         </Projects>
-        <Projects Include="ExemploUsoGeral.dproj">
-            <Dependencies/>
-        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -62,23 +59,14 @@
     <Target Name="PainelSenhas:Make">
         <MSBuild Projects="PainelSenhas.dproj" Targets="Make"/>
     </Target>
-    <Target Name="ExemploUsoGeral">
-        <MSBuild Projects="ExemploUsoGeral.dproj"/>
-    </Target>
-    <Target Name="ExemploUsoGeral:Clean">
-        <MSBuild Projects="ExemploUsoGeral.dproj" Targets="Clean"/>
-    </Target>
-    <Target Name="ExemploUsoGeral:Make">
-        <MSBuild Projects="ExemploUsoGeral.dproj" Targets="Make"/>
-    </Target>
     <Target Name="Build">
-        <CallTarget Targets="SenhasTerminal;GeradorSenhas;SolicitacaoSenhaCaixa;PainelSenhas;ExemploUsoGeral"/>
+        <CallTarget Targets="SenhasTerminal;GeradorSenhas;SolicitacaoSenhaCaixa;PainelSenhas"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="SenhasTerminal:Clean;GeradorSenhas:Clean;SolicitacaoSenhaCaixa:Clean;PainelSenhas:Clean;ExemploUsoGeral:Clean"/>
+        <CallTarget Targets="SenhasTerminal:Clean;GeradorSenhas:Clean;SolicitacaoSenhaCaixa:Clean;PainelSenhas:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="SenhasTerminal:Make;GeradorSenhas:Make;SolicitacaoSenhaCaixa:Make;PainelSenhas:Make;ExemploUsoGeral:Make"/>
+        <CallTarget Targets="SenhasTerminal:Make;GeradorSenhas:Make;SolicitacaoSenhaCaixa:Make;PainelSenhas:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
